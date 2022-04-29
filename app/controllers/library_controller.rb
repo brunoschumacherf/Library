@@ -33,7 +33,6 @@ class LibraryController < ApiController
       render json: { message: "Nenhuma especificação de busca" }, status: 400
       return
     end
-    byebug
     books = Library.where(user: current_user.email)
 
     if params[:author].present?
