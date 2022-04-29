@@ -30,7 +30,7 @@ class LibraryController < ApiController
 
   def search
     if params[:author].blank? && params[:gender].blank? && params[:title].blank?
-      render json: { message: "'''" }, status: 400
+      render json: { message: "Nenhuma especificação de busca" }, status: 400
     end
 
     books = Library.where(user: current_user.email)
